@@ -1,2 +1,2 @@
 # e-commerce
-This e-commerce API
+This is e-commerce API
