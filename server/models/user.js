@@ -1,4 +1,4 @@
-class User extends Address{
+class User {
     constructor(id, firstname, lastname, type, gender, email, password){
         this.id = id;
         this.firstname = firstname;
@@ -11,10 +11,4 @@ class User extends Address{
     }
 }
 
-class Address {
-    constructor(id, street, city){
-        this.id = id;
-        this.street = street;
-        this.city = city;
-    }
-}
+module.exports = User;

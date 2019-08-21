@@ -1,9 +1,9 @@
-import app from './app';
+const app = require('./app');
 
-const PATH = 3000;
+const PORT = 3000;
 
-const server = app.listen(PATH, () => {
-    console.log(`Server is running on ${PATH}`);
+const server = app.listen(PORT, () => {
+    console.log(`Server is running on ${PORT}`);
 });
 
-export default server;
+module.exports = server;

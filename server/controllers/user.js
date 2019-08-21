@@ -1,46 +1,36 @@
-let users = [];
+const User = require('../models/user');
 
-const signin = (email, password) => {
-    const user = users.find(user => user.email == email && user.password == password);
+const signin = (req, res) => {
+    // const user = users.find(user => user.email == email && user.password == password);
     
-    if (user) {
-        return 'Signed in successful.';
-    }
+    // if (user) {
+    //     return 'Signed in successful.';
+    // }
 
-    return 'Signin failed.';
+    // return 'Signin failed.';
+
+    res.send("Sign in");
 };
 
-const signup = (user) => {
-    users.push({
-        id: user.id,
-        firstname: user.firstname,
-        lastname: user.lastname,
-        type: user.type,
-        gender: user.gender,
-        timestamp: user.timestamp,
-        email: user.email,
-        password: user.password
-    });
-    return 'Signup successful.';
+const signup = (req,res) => {
+    // users.push({
+    //     id: user.id,
+    //     firstname: user.firstname,
+    //     lastname: user.lastname,
+    //     type: user.type,
+    //     gender: user.gender,
+    //     timestamp: user.timestamp,
+    //     email: user.email,
+    //     password: user.password
+    // });
+    // return 'Signup successful.';
+    res.send("Sign up");
 };
 
-////////
-/// Test
-////////
+const getUserById = (req,res) => {
+    res.send("User");
+};
 
-let message = signup({
-    id: 1,
-    firstname: 'Dominique',
-    lastname: 'Nsengimana',
-    type: 'Customer',
-    gender: 'Male',
-    timestamp: Date.now(),
-    email: 'email@email.com',
-    password: 'password'
-});
-
-console.log(message);
-console.log(`Created user: ${users[users.length - 1].firstname +' '+ users[users.length - 1].firstname}`);
-
-message = signin('email@email.com', 'password');
-console.log(message);
+module.exports.signin = signin;
+module.exports.signup = signup;
+module.exports.getUserById = getUserById;
